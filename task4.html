@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s ease; /* Smooth transition */
+        }
+        button {
+            background-color: #0f100f;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #7d1ec1;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Click to Change Background</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+        button.addEventListener('click', function() {
+            document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Random color
+        });
+    </script>
+</body>
+</html>
