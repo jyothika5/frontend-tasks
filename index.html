@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Internship Task Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #dfe9f3, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #222;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 3px #ccc;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .task-btn {
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .task-btn:hover {
+      background-color: #007bff;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 1000px;
+      height: 600px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📁 Internship Task Viewer</h1>
+
+  <div class="button-grid">
+    <button class="task-btn" onclick="loadTask('task1.html')">Task 1</button>
+    <button class="task-btn" onclick="loadTask('task2.html')">Task 2</button>
+    <button class="task-btn" onclick="loadTask('task3.html')">Task 3</button>
+    <button class="task-btn" onclick="loadTask('task4.html')">Task 4</button>
+    <button class="task-btn" onclick="loadTask('task5.html')">Task 5</button>
+    <button class="task-btn" onclick="loadTask('task6.html')">Task 6</button>
+    <button class="task-btn" onclick="loadTask('task7.html')">Task 7</button>
+    <button class="task-btn" onclick="loadTask('task8.html')">Task 8</button>
+  </div>
+
+  <iframe id="taskFrame" src="" title="Task Output Viewer"></iframe>
+
+  <script>
+    function loadTask(taskFile) {
+      document.getElementById('taskFrame').src = taskFile;
+    }
+  </script>
+
+</body>
+</html>
