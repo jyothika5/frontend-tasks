@@ -4,43 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Button</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            transition: background-color 0.5s ease; /* Smooth transition */
-        }
-        button {
-            background-color: #0f100f;
-            border: none;
-            color: white;
-            padding: 15px 32px;
+            font-family: 'Segoe UI', sans-serif;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            margin: 0;
+            padding: 50px;
+            background-color: #f0f0f0;
             transition: background-color 0.3s ease;
         }
+
+        h1 {
+            color: #333333;
+            font-weight: 600; /* Use 600 for semi-bold */
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            background-color: #4d20b6;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+            font-weight: 400;
+        }
+
         button:hover {
-            background-color: #7d1ec1;
+            background-color: #9d54b4;
+            transform: translateY(-2px); /* Added slight lift on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        button:active {
+            background-color: #004080;
+            transform: translateY(0); /* Reset transform on active */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <button id="myButton">Click to Change Background</button>
+    <h1>Click the Button to Change Background</h1>
+    <button id="changeBackgroundButton">Change Background</button>
 
     <script>
-        const button = document.getElementById('myButton');
-        button.addEventListener('click', function() {
-            document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Random color
+        const changeColorButton = document.getElementById('changeBackgroundButton');
+
+        function getRandomColor() {
+            // Generate more vibrant colors by restricting the range
+            const r = Math.floor(Math.random() * 156 + 100); // 100 to 255
+            const g = Math.floor(Math.random() * 156 + 100); // 100 to 255
+            const b = Math.floor(Math.random() * 156 + 100); // 100 to 255
+            return `rgb(${r},${g},${b})`;
+        }
+
+        changeColorButton.addEventListener('click', function() {
+            const newColor = getRandomColor();
+            document.body.style.backgroundColor = newColor;
         });
     </script>
 </body>

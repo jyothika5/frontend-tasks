@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background: #5f4caf;
+    background: #99099e;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -27,7 +27,7 @@ header {
 
 .box {
     background: white;
-    width: 30%; /* Default width */
+    width: 30%; 
     margin-bottom: 20px;
     padding: 20px;
     box-sizing: border-box;
