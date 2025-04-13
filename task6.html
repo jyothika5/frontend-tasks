@@ -1,68 +1,128 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles2.css">
+    <title>Component-Based Styling: Where Data Meets Intelligence</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles to override or extend the framework */
+        .navbar-dark {
+            background-color: #343a40; /* Example dark background */
+        }
+        .jumbotron {
+            background-color: #f8f9fa; /* Example light background */
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .feature-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        /* Add more custom styles as needed to match design requirements */
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Contact Us</h1>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <div class="error" id="nameError"></div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <div class="error" id="emailError"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Your Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Intelligence</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <div class="error" id="messageError"></div>
-
-            <button type="submit">Submit</button>
-        </form>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Where Data Meets Intelligence</h1>
+            <p class="lead">Leveraging the power of data and intelligent systems for innovative solutions.</p>
+            <hr class="my-4">
+            <p>Explore our services and discover how we can help you.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </div>
     </div>
 
-    <script>
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', function(event) {
-            let isValid = true;
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h3>Data Analysis</h3>
+                    <p>We provide comprehensive data analysis services to uncover valuable insights.</p>
+                    <button class="btn btn-outline-secondary">Read More</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h3>Intelligent Solutions</h3>
+                    <p>Develop intelligent applications and systems tailored to your specific needs.</p>
+                    <button class="btn btn-outline-secondary">Explore Solutions</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h3>Modular Design</h3>
+                    <p>Our approach emphasizes modularity and maintainability for long-term success.</p>
+                    <button class="btn btn-outline-secondary">Our Principles</button>
+                </div>
+            </div>
+        </div>
 
-            // Reset error messages
-            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+        <hr class="my-5">
 
-            // Validate Name
-            const name = document.getElementById('name').value;
-            if (!name.trim()) {
-                document.getElementById('nameError').textContent = 'Name is required';
-                isValid = false;
-            }
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Our Vision</h2>
+                <p>To be a leader in the intersection of data and intelligence, driving innovation and creating impactful solutions for our clients.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Data-Driven Decisions</li>
+                    <li class="list-group-item">Cutting-Edge Technology</li>
+                    <li class="list-group-item">Client-Focused Approach</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <h2>Our Team</h2>
+                <p>Meet our experienced team of data scientists, engineers, and strategists.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Lead Data Scientist</h6>
+                        <p class="card-text">Expert in machine learning and statistical analysis.</p>
+                        <a href="#" class="card-link">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            // Validate Email
-            const email = document.getElementById('email').value;
-            if (!email.trim()) {
-                document.getElementById('emailError').textContent = 'Email is required';
-                isValid = false;
-            } else if (!email.includes('@')) {
-                document.getElementById('emailError').textContent = 'Invalid email format';
-                isValid = false;
-            }
+    <footer class="py-4 bg-dark text-white-50 text-center">
+        <div class="container">
+            <small>Copyright &copy; 2025 Your Company</small>
+        </div>
+    </footer>
 
-            // Validate Message
-            const message = document.getElementById('message').value;
-            if (!message.trim()) {
-                document.getElementById('messageError').textContent = 'Message is required';
-                isValid = false;
-            }
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-            if (!isValid) {
-                event.preventDefault(); // Prevent form submission
-            }
-        });
-    </script>
 </body>
 </html>
